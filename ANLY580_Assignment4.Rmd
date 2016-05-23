@@ -66,6 +66,23 @@ boxplot(iris$Sepal.Length~iris$Species,col=topo.colors(3)) #Box plots with three
 ## Ying	Dong
 ## Rui	Fan
 ## Sukanyaraj	Govindaraaj
+
+The "Plotly" package is used to translate ggplot2 graphs to an interactive web-based version and/or create custom web-based visualizations directly from R. The "Diamonds" dataset contains the prices and other attributes such as carat, quality, color, clariyt etc. of almost 54,000 diamonds.The blow chart is an interactive R plot the shows the variation in diamond price and carat, weight of diamond.
+
+```{r, echo=TRUE}
+library(plotly)
+data(diamonds)
+set.seed(100)
+d <- diamonds[sample(nrow(diamonds), 1000), ]
+plot_ly(d, x = carat, y = price, text = paste("Clarity: ", clarity),
+        mode = "markers", color = carat, size = carat)
+
+
+
+```
+
+
+
 ## Kan	Hui
 
 A *rUnemploymentData* contains data and visualization functions for USA unemployment data from 2000 to 2013. Data comes from the US Bureau of Labor Statistics.
